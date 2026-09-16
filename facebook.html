@@ -1,0 +1,357 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Facebook - Log In</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 980px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        /* LEFT SIDE */
+
+        .left {
+            width: 55%;
+            margin-top: -40px;
+        }
+
+        .logo {
+            color: #1877f2;
+            font-size: 58px;
+            font-weight: bold;
+            letter-spacing: -3px;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 28px;
+            line-height: 32px;
+            max-width: 500px;
+        }
+
+        /* RIGHT SIDE */
+
+        .right {
+            width: 396px;
+        }
+
+        .login-box {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .input {
+            width: 100%;
+            height: 52px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+
+            font-size: 17px;
+            outline: none;
+        }
+
+        .input:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 1px #1877f2;
+        }
+
+        .login-button {
+            width: 100%;
+            height: 48px;
+
+            border: none;
+            border-radius: 6px;
+
+            background: #1877f2;
+            color: white;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background: #166fe5;
+        }
+
+        .forgot {
+            display: block;
+            text-align: center;
+
+            color: #1877f2;
+            text-decoration: none;
+
+            font-size: 14px;
+
+            margin: 16px 0;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            height: 1px;
+            background: #dadde1;
+            margin: 20px 0;
+        }
+
+        .create-button {
+            display: block;
+            margin: 0 auto 8px;
+
+            border: none;
+            border-radius: 6px;
+
+            background: #42b72a;
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            padding: 14px 18px;
+
+            cursor: pointer;
+        }
+
+        .create-button:hover {
+            background: #36a420;
+        }
+
+        .bottom-text {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 14px;
+        }
+
+        .bottom-text strong {
+            font-weight: bold;
+        }
+
+        /* DEMO MESSAGE */
+
+        .demo-message {
+            display: none;
+            background: #fff3cd;
+            color: #664d03;
+            border: 1px solid #ffecb5;
+
+            padding: 10px;
+            margin-top: 12px;
+
+            border-radius: 6px;
+            text-align: center;
+
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .left {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .logo {
+                font-size: 50px;
+            }
+
+            .description {
+                font-size: 20px;
+                line-height: 25px;
+                margin: auto;
+            }
+
+            .right {
+                width: 100%;
+                max-width: 396px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .page {
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 45px;
+            }
+
+            .description {
+                font-size: 18px;
+                line-height: 23px;
+            }
+
+            .login-box {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div class="container">
+
+            <!-- LEFT SECTION -->
+            <div class="left">
+
+                <div class="logo">
+                    facebook
+                </div>
+
+                <p class="description">
+                    Facebook helps you connect and share
+                    with the people in your life.
+                </p>
+
+            </div>
+
+
+            <!-- RIGHT SECTION -->
+            <div class="right">
+
+                <div class="login-box">
+
+                    <form id="loginForm">
+
+                        <input
+                            type="text"
+                            class="input"
+                            placeholder="Email or phone number"
+                            autocomplete="off"
+                        >
+
+                        <input
+                            type="password"
+                            class="input"
+                            placeholder="Password"
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="submit"
+                            class="login-button">
+                            Log In
+                        </button>
+
+                    </form>
+
+
+                    <a href="#" class="forgot" id="forgotPassword">
+                        Forgotten password?
+                    </a>
+
+
+                    <div class="divider"></div>
+
+
+                    <button
+                        class="create-button"
+                        id="createAccount">
+                        Create new account
+                    </button>
+
+
+                    <div
+                        class="demo-message"
+                        id="demoMessage">
+                        Demo page only — no login information was submitted.
+                    </div>
+
+                </div>
+
+
+                <p class="bottom-text">
+                    <strong>Create a Page</strong>
+                    for a celebrity, brand or business.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const loginForm = document.getElementById("loginForm");
+        const forgotPassword = document.getElementById("forgotPassword");
+        const createAccount = document.getElementById("createAccount");
+        const demoMessage = document.getElementById("demoMessage");
+
+
+        loginForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            demoMessage.style.display = "block";
+
+        });
+
+
+        forgotPassword.addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            alert("Demo page: password recovery is not connected.");
+
+        });
+
+
+        createAccount.addEventListener("click", function() {
+
+            alert("Demo page: account creation is not connected.");
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
